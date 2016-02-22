@@ -1,0 +1,151 @@
+/*
+ *  Rates
+ *
+ *--------------------------
+ */
+
+.add-form {
+    .centered {
+        width: 45%;
+        border-radius: 1px;
+        font-size: 14px;
+    }
+    .rm{
+        .fa-3{
+            color:$nav;
+        }
+        position: absolute;
+        top: -2px;
+        margin: auto;
+        left: 45px;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        z-index: 999;
+    }
+    .updt{
+        .fa-3{
+            font-size: 2.3em;
+            color:$nav;
+        }
+        position: absolute;
+        top: -2px;
+        margin: auto;
+        right: 10px;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        z-index: 999;
+    }
+    .rtt {
+        position: absolute;
+        top: -5px;
+        margin: auto;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+    }
+
+
+    .lv1 {
+        &:nth-last-child(1) {
+            padding-bottom: 10px;
+            border-bottom: 1px dotted #aaa;
+        }
+
+        &:hover .new, &:hover .dlt {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .new {
+            position: absolute;
+            right: -8px;
+            top: 10px;
+            @media(min-width:993px){
+                display: none;
+            }
+        }
+
+        .dlt {
+            position: absolute;
+            left: -8px;
+            top: 10px;
+            @media(min-width:993px){
+                display: none;
+            }
+        }
+
+        margin-bottom: 10px;
+    }
+
+    .udl {
+        display: inline-block;
+    }
+
+    input[type="text"] {
+        display: none;
+        width: 100%;
+        padding: 8px 0;
+    }
+
+    .diamond {
+        padding: 10px 0;
+        text-align: center;
+        -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+        background-color: #fff;
+    }
+
+    padding: 30px 0 10px 0;
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+}
+.header{
+    padding: 45px 30px 30px;
+    background-color:#fff;
+    @media(max-width:767px){
+        padding:45px 10px 30px;
+    }
+}
+.rates-wrap{
+    @media(max-width:767px){
+        padding:0;
+    }
+}
+.updt-form {
+    @extend .add-form;
+    .lv1 {
+
+        .new {
+            right: -8px;
+            top: 5px;
+
+        }
+
+        .dlt {
+            left: -8px;
+            top: 5px;
+
+        }
+
+    }
+
+    .diamond{
+        padding: 5px 0;
+    }
+    .lv2-l{
+        // padding:0 10px;
+        padding-left:15px;
+        padding-right:10px;
+    }
+    .lv2-r{
+        padding-left:10px;
+        padding-right:15px;
+    }
+    input[type="text"] {
+        padding: 4px 0;
+    }
+    margin:40px 0 0;
+}

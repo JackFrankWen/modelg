@@ -1,0 +1,134 @@
+/*
+ *	1.0 sidebar
+ *
+ *--------------------------
+ */
+#main-sidebar {
+    a {
+        color: #b8c7ce;
+    }
+    @media (max-width: 767px){
+        -webkit-transform: translate(-230px, 0);
+            -ms-transform: translate(-230px, 0);
+            -o-transform: translate(-230px, 0);
+            transform: translate(-230px, 0);
+    }
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding-top: 50px;
+    width: 230px;
+    height: 100%;
+    background-color: #222d32;
+}
+
+#main-sidebar .side-menu {
+    & > li {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    & > li > a {
+        padding: 12px 5px 12px 15px;
+        display: block;
+    }
+
+    & > li > a > .fa {
+        width: 20px;
+    }
+}
+
+#main-sidebar .side-menu li {
+    a {
+        border-left: 3px solid transparent;
+    }
+
+    &:hover > a {
+        cursor: pointer;
+        color: #fff;
+        border-left: 3px solid #d73925;
+        background-color: #1e282c;
+    }
+
+    position: relative;
+}
+
+#main-sidebar .side-menu .treeview .treeview-menu {
+    & > li:hover a {
+        color: #fff;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        background-color: transparent;
+    }
+
+    & > li > a {
+        padding: 5px 5px 5px 20px;
+        display: block;
+        font-size: 14px;
+    }
+
+    & > li > a > .fa {
+        width: 20px;
+    }
+
+    display: none;
+    background-color: #374850;
+}
+
+.open {
+    display: block !important;
+}
+
+/*
+ *	2.0 Collapse-sidebar
+ *
+ *---------------------------------
+ */
+.sidebar-collapse #main-sidebar {
+    width: 50px;
+}
+
+.sidebar-collapse #main-sidebar .side-menu {
+    & > li > a > .fa {
+        width: 40px;
+    }
+
+    & > li > a > .fa-angle-left {
+        display: none;
+    }
+}
+
+.sidebar-collapse #main-sidebar .side-menu li {
+    &:hover {
+        width: 200px;
+    }
+
+    &:hover .treeview-menu {
+        display: block;
+    }
+
+    &:hover a span {
+        display: inline-block;
+    }
+
+    span {
+        display: none;
+    }
+}
+
+.sidebar-collapse #main-sidebar .side-menu .treeview .treeview-menu {
+    & > li {
+        width: 150px;
+    }
+
+    & > li > a {
+        padding: 10px 10px;
+    }
+
+    & > li > a > .fa {
+        width: 15px;
+    }
+
+    position: absolute;
+    left: 50px;
+}

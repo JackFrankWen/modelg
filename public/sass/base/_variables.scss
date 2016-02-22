@@ -1,0 +1,39 @@
+
+
+/**
+ *  Colors
+ *------------------------------------------------------
+ */
+
+$golden:#e5db9b;
+$yellow:#741f8c;
+$orange:#fbaf5d;
+$brown:#2b180b;
+$darkorange:#f7941d;
+$nav:#dd4b39;
+$nav-left:#d73925;
+
+
+ /**
+ *  Load fonts
+ *------------------------------------------------------
+ */
+
+.no-padding{
+    padding:0px;
+ }
+.bg{
+	background-color:$brown;
+	padding:30px 15px;
+}
+.centered{
+	display:block;
+	margin:0 auto;
+}
+.wrap{
+	position:relative;
+}
+.ofst{
+	padding-right:0;
+	padding-left:0;
+}

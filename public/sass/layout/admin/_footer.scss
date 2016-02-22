@@ -1,0 +1,23 @@
+.main-footer {
+	@media (max-width: 767px){
+	    position: absolute;
+	    width: 100%;
+	    -webkit-transform: translate(-230px, 0);
+	        -ms-transform: translate(-230px, 0);
+	        -o-transform: translate(-230px, 0);
+	        transform: translate(-230px, 0);
+	}
+    margin-left: 230px;
+    padding: 15px;
+    background-color: #fff;
+
+}
+
+.sidebar-collapse .main-footer {
+    margin-left: 50px;
+}
+.sidebar-open .main-footer{
+	    @media(max-width:767px){
+    	margin-left:0;
+    }
+}

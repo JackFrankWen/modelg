@@ -1,0 +1,60 @@
+/*
+ *	1.0 Content
+ *
+ *--------------------------
+ */
+.wrap-content {
+    margin-left: 230px;
+    min-height: 800px;
+    background-color: #ecf0f5;
+    @media (max-width: 767px){
+        margin-left:0;
+    }
+
+}
+
+/*
+ *	2.0 Collapse-content
+ *
+ *--------------------------
+ */
+.sidebar-collapse .wrap-content {
+    margin-left: 50px;
+}
+
+.sidebar-open .wrap-content{
+    @media (max-width: 767px){
+        margin-left:0;
+    }
+}
+
+.content-header {
+    width: 100%;
+    padding: 20px 15px 0px;
+}
+
+
+.breadcrumb {
+    a ,.fa-home{
+        color: #616161;
+    }
+
+    & > li + li:before {
+        display: none;
+    }
+    margin-bottom: 5px;
+    padding:5px 0;
+    background-color: #ECF0F5;
+}
+
+
+.content-body {
+    .row {
+        width: 100%;
+        margin: 0px;
+    }
+    @import 'pages/admin/_rates.scss';
+    @import 'pages/admin/_shopinfo.scss';
+    padding: 0px 15px 15px;
+    width: 100%;
+}

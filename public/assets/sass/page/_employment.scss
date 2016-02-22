@@ -1,0 +1,28 @@
+#employment{
+	.container{
+		.row{
+			.title{
+				img{
+				    display: inline-block !important;
+				}
+				margin: 0 0 30px;
+				text-align:center;
+			}
+			.gallery{
+				#swiper3{
+					.swiper-wrapper{
+						.swiper-slide{
+				    		border:5px solid $purple;
+						    text-align: center;
+						}
+					}
+				}
+				margin:0 0 35px;
+			}
+			.employ_info{
+				margin: 30px 0 50px;
+			}
+
+		}
+	}
+}

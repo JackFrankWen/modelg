@@ -1,0 +1,18 @@
+//swpier
+.swiper-container-horizontal>.swiper-pagination {
+    bottom: 10px;
+    right: 22px;
+    width: initial;
+    left: initial;
+}
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #ccc;
+    opacity: 0.8;
+}
+.swiper-pagination-bullet-active {
+    background: $orange;
+}

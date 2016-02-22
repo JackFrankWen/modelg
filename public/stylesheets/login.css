@@ -1,0 +1,36 @@
+/*
+Theme Name: Pyrmont Paradise
+Theme URI: 192.168.191:8101
+Author: Jack 
+Author URI: 
+Description: This is my first Adult Website.
+Version: 1
+Text Domain: AOAO
+Description:Css write by sass
+*/
+/* line 2, ../sass/pages/others/_login.scss */
+#login .row {
+  width: 360px;
+  margin: 7% auto;
+}
+/* line 3, ../sass/pages/others/_login.scss */
+#login .row h1 {
+  margin: 100px 0 20px 0;
+  text-align: center;
+}
+/* line 9, ../sass/pages/others/_login.scss */
+#login .row form button {
+  float: right;
+}
+@media (max-width: 400px) {
+  /* line 2, ../sass/pages/others/_login.scss */
+  #login .row {
+    width: 100%;
+    margin: 20px auto;
+  }
+}
+
+/* line 25, ../sass/pages/others/_login.scss */
+.login-page {
+  background: #d2d6de;
+}

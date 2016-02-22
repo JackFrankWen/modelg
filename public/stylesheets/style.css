@@ -1,0 +1,527 @@
+/*
+Theme Name: Pyrmont Paradise
+Theme URI: 192.168.191:8101
+Author: Jack 
+Author URI: 
+Description: This is my first Adult Website.
+Version: 1
+Text Domain: AOAO
+Description:Css write by sass
+*/
+/**
+ * Base Contents:
+ *
+ * 1.0 - _variables.scss
+ * 2.0 - _reset.scss
+ * 3.0 - _mixin.scss
+ * 3.0 - _woocommerce.scss
+ */
+/**
+ *  Colors
+ *------------------------------------------------------
+ */
+/**
+ *  Fonts size
+ *------------------------------------------------------
+ */
+/**
+*  Load fonts
+*------------------------------------------------------
+*/
+/* line 36, ../sass/base/_variables.scss */
+.no-padding {
+  padding: 0px;
+}
+
+/* line 39, ../sass/base/_variables.scss */
+.bg {
+  background-color: #2b180b;
+  padding: 30px 15px;
+}
+
+/* line 43, ../sass/base/_variables.scss */
+.centered {
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 47, ../sass/base/_variables.scss */
+.wrap {
+  position: relative;
+}
+
+/* line 50, ../sass/base/_variables.scss */
+.ofst {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/**
+ *   HTML5 Reset
+ *------------------------------------------------------
+ */
+/* line 5, ../sass/base/_reset.scss */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 14px;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* line 25, ../sass/base/_reset.scss */
+body * {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* line 29, ../sass/base/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 33, ../sass/base/_reset.scss */
+ul {
+  list-style: none;
+}
+
+/* line 37, ../sass/base/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 42, ../sass/base/_reset.scss */
+a {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  color: #fff;
+}
+/* line 47, ../sass/base/_reset.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 52, ../sass/base/_reset.scss */
+h1 {
+  font-size: 48px;
+}
+
+/* line 55, ../sass/base/_reset.scss */
+h2 {
+  font-size: 36px;
+}
+
+/* line 58, ../sass/base/_reset.scss */
+h3 {
+  font-size: 28px;
+}
+
+/* line 61, ../sass/base/_reset.scss */
+h4 {
+  font-size: 24px;
+}
+
+/**
+ * Component Contents:
+ *
+ * 1.0 - _woocommerce.scss
+ * 2.0 - _wpml.scss
+ * 3.0 - _button.scss
+ */
+/* line 1, ../sass/component/_fonts.scss */
+.fa-plus:before, .fa-minus:before {
+  color: #c9302c;
+}
+
+/* line 4, ../sass/component/_fonts.scss */
+.fa-2 {
+  font-size: 1.5em;
+}
+
+/* line 7, ../sass/component/_fonts.scss */
+.fa-3 {
+  font-size: 4em;
+}
+
+/* line 10, ../sass/component/_fonts.scss */
+.fa-4 {
+  font-size: 5em;
+}
+
+/* line 13, ../sass/component/_fonts.scss */
+.fa-5 {
+  font-size: 7em;
+}
+
+/**
+ * admin Contents:
+ *
+ * 1.0 - _header.scss
+ * 2.0 - _footer.scss
+ * 3.0 - _navigation.scss
+ */
+/* line 1, ../sass/admin/_header.scss */
+header {
+  position: relative;
+  z-index: 100;
+}
+/* line 2, ../sass/admin/_header.scss */
+header nav {
+  background-color: #dd4b39;
+}
+
+/* line 9, ../sass/admin/_header.scss */
+.nav-wrap {
+  padding-right: 15px;
+}
+
+/* line 13, ../sass/admin/_header.scss */
+.navbar-header {
+  background-color: #d73925;
+  width: 230px;
+  text-align: center;
+}
+/* line 17, ../sass/admin/_header.scss */
+.navbar-header .logo {
+  line-height: 50px;
+}
+@media (max-width: 768px) {
+  /* line 13, ../sass/admin/_header.scss */
+  .navbar-header {
+    width: 100%;
+  }
+}
+
+/* line 24, ../sass/admin/_header.scss */
+.sidebar-collapse .navbar-header {
+  width: 50px;
+  text-align: center;
+}
+
+/* line 28, ../sass/admin/_header.scss */
+.nav > li > a:focus, .nav > li > a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: #D73925;
+}
+
+/*
+ *	1.0 sidebar
+ *
+ *--------------------------
+ */
+/* line 6, ../sass/admin/_sidebar.scss */
+#main-sidebar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding-top: 50px;
+  width: 230px;
+  height: 100%;
+  background-color: #222d32;
+}
+/* line 7, ../sass/admin/_sidebar.scss */
+#main-sidebar a {
+  color: #b8c7ce;
+}
+
+/* line 21, ../sass/admin/_sidebar.scss */
+#main-sidebar .side-menu > li {
+  margin: 0px;
+  padding: 0px;
+}
+/* line 26, ../sass/admin/_sidebar.scss */
+#main-sidebar .side-menu > li > a {
+  padding: 12px 5px 12px 15px;
+  display: block;
+}
+/* line 31, ../sass/admin/_sidebar.scss */
+#main-sidebar .side-menu > li > a > .fa {
+  width: 20px;
+}
+
+/* line 36, ../sass/admin/_sidebar.scss */
+#main-sidebar .side-menu li {
+  position: relative;
+}
+/* line 37, ../sass/admin/_sidebar.scss */
+#main-sidebar .side-menu li a {
+  border-left: 3px solid transparent;
+}
+/* line 41, ../sass/admin/_sidebar.scss */
+#main-sidebar .side-menu li:hover > a {
+  cursor: pointer;
+  color: #fff;
+  border-left: 3px solid #d73925;
+  background-color: #1e282c;
+}
+
+/* line 51, ../sass/admin/_sidebar.scss */
+#main-sidebar .side-menu .treeview .treeview-menu {
+  display: none;
+  background-color: #374850;
+}
+/* line 52, ../sass/admin/_sidebar.scss */
+#main-sidebar .side-menu .treeview .treeview-menu > li:hover a {
+  color: #fff;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  background-color: transparent;
+}
+/* line 59, ../sass/admin/_sidebar.scss */
+#main-sidebar .side-menu .treeview .treeview-menu > li > a {
+  padding: 5px 5px 5px 20px;
+  display: block;
+  font-size: 14px;
+}
+/* line 65, ../sass/admin/_sidebar.scss */
+#main-sidebar .side-menu .treeview .treeview-menu > li > a > .fa {
+  width: 20px;
+}
+
+/* line 73, ../sass/admin/_sidebar.scss */
+.open {
+  display: block !important;
+}
+
+/*
+ *	2.0 Collapse-sidebar
+ *
+ *---------------------------------
+ */
+/* line 82, ../sass/admin/_sidebar.scss */
+.sidebar-collapse #main-sidebar {
+  width: 50px;
+}
+
+/* line 87, ../sass/admin/_sidebar.scss */
+.sidebar-collapse #main-sidebar .side-menu > li > a > .fa {
+  width: 40px;
+}
+/* line 91, ../sass/admin/_sidebar.scss */
+.sidebar-collapse #main-sidebar .side-menu > li > a > .fa-angle-left {
+  display: none;
+}
+
+/* line 97, ../sass/admin/_sidebar.scss */
+.sidebar-collapse #main-sidebar .side-menu li:hover {
+  width: 200px;
+}
+/* line 101, ../sass/admin/_sidebar.scss */
+.sidebar-collapse #main-sidebar .side-menu li:hover .treeview-menu {
+  display: block;
+}
+/* line 105, ../sass/admin/_sidebar.scss */
+.sidebar-collapse #main-sidebar .side-menu li:hover a span {
+  display: inline-block;
+}
+/* line 109, ../sass/admin/_sidebar.scss */
+.sidebar-collapse #main-sidebar .side-menu li span {
+  display: none;
+}
+
+/* line 114, ../sass/admin/_sidebar.scss */
+.sidebar-collapse #main-sidebar .side-menu .treeview .treeview-menu {
+  position: absolute;
+  left: 50px;
+}
+/* line 115, ../sass/admin/_sidebar.scss */
+.sidebar-collapse #main-sidebar .side-menu .treeview .treeview-menu > li {
+  width: 150px;
+}
+/* line 119, ../sass/admin/_sidebar.scss */
+.sidebar-collapse #main-sidebar .side-menu .treeview .treeview-menu > li > a {
+  padding: 10px 10px;
+}
+/* line 123, ../sass/admin/_sidebar.scss */
+.sidebar-collapse #main-sidebar .side-menu .treeview .treeview-menu > li > a > .fa {
+  width: 15px;
+}
+
+/*
+ *	1.0 Content
+ *
+ *--------------------------
+ */
+/* line 6, ../sass/admin/_content.scss */
+.wrap-content {
+  margin-left: 230px;
+  background-color: #ecf0f5;
+}
+
+/*
+ *	2.0 Collapse-content
+ *
+ *--------------------------
+ */
+/* line 16, ../sass/admin/_content.scss */
+.sidebar-collapse .wrap-content {
+  margin-left: 50px;
+}
+
+/* line 20, ../sass/admin/_content.scss */
+.content-header {
+  width: 100%;
+  padding: 20px 15px 0px;
+}
+
+/* line 26, ../sass/admin/_content.scss */
+.breadcrumb {
+  margin-bottom: 5px;
+  padding: 5px 0;
+  background-color: #ECF0F5;
+}
+/* line 27, ../sass/admin/_content.scss */
+.breadcrumb a, .breadcrumb .fa-home {
+  color: #616161;
+}
+/* line 31, ../sass/admin/_content.scss */
+.breadcrumb > li + li:before {
+  display: none;
+}
+
+/* line 40, ../sass/admin/_content.scss */
+.content-body {
+  /*
+   *	Shop Info
+   *
+   *--------------------------
+   */
+  padding: 0px 15px;
+  width: 100%;
+}
+/* line 41, ../sass/admin/_content.scss */
+.content-body .row {
+  width: 100%;
+  margin: 0px;
+  background-color: #fff;
+}
+/* line 7, ../sass/admin/partials/_shopinfo.scss */
+.content-body .shopinfo form, .content-body .hello form {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* line 1, ../sass/admin/_footer.scss */
+.main-footer {
+  margin-left: 230px;
+  padding: 15px;
+  background-color: #fff;
+}
+
+/* line 7, ../sass/admin/_footer.scss */
+.sidebar-collapse .main-footer {
+  margin-left: 50px;
+}
+
+/*
+ *  Rates
+ *
+ *--------------------------
+ */
+/* line 7, ../sass/admin/partials/_rates.scss */
+.rates {
+  padding: 0 20px;
+}
+/* line 8, ../sass/admin/partials/_rates.scss */
+.rates .add-form, .rates .update-form {
+  padding: 30px 0 10px 0;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+}
+/* line 9, ../sass/admin/partials/_rates.scss */
+.rates .add-form .centered, .rates .update-form .centered {
+  width: 45%;
+  border-radius: 1px;
+  font-size: 14px;
+}
+/* line 15, ../sass/admin/partials/_rates.scss */
+.rates .add-form .rtt, .rates .update-form .rtt {
+  position: absolute;
+  top: -5px;
+  margin: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+/* line 24, ../sass/admin/partials/_rates.scss */
+.rates .add-form .lv1, .rates .update-form .lv1 {
+  margin-bottom: 10px;
+}
+/* line 25, ../sass/admin/partials/_rates.scss */
+.rates .add-form .lv1:nth-last-child(1), .rates .update-form .lv1:nth-last-child(1) {
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #aaa;
+}
+/* line 30, ../sass/admin/partials/_rates.scss */
+.rates .add-form .lv1:hover .new, .rates .update-form .lv1:hover .new, .rates .add-form .lv1:hover .dlt, .rates .update-form .lv1:hover .dlt {
+  display: inline-block;
+  cursor: pointer;
+}
+/* line 35, ../sass/admin/partials/_rates.scss */
+.rates .add-form .lv1 .new, .rates .update-form .lv1 .new {
+  display: none;
+  position: absolute;
+  right: -8px;
+  top: 10px;
+}
+/* line 42, ../sass/admin/partials/_rates.scss */
+.rates .add-form .lv1 .dlt, .rates .update-form .lv1 .dlt {
+  display: none;
+  position: absolute;
+  left: -8px;
+  top: 10px;
+}
+/* line 52, ../sass/admin/partials/_rates.scss */
+.rates .add-form .udl, .rates .update-form .udl {
+  display: inline-block;
+}
+/* line 56, ../sass/admin/partials/_rates.scss */
+.rates .add-form input[type="text"], .rates .update-form input[type="text"] {
+  display: none;
+  width: 100%;
+  padding: 8px 0;
+}
+/* line 62, ../sass/admin/partials/_rates.scss */
+.rates .add-form .diamond, .rates .update-form .diamond {
+  padding: 10px 0;
+  text-align: center;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: #fff;
+}
+/* line 78, ../sass/admin/partials/_rates.scss */
+.rates .row {
+  padding: 45px 30px 30px;
+}
+
+/**
+ * Page Contents:
+ *
+ * 1.0 - _home.scss
+ * 2.0 - _rates.scss
+ * 3.0 - _girls.scss
+ * 4.0 - _contactus.scss
+ */

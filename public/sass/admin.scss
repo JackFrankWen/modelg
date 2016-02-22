@@ -1,0 +1,43 @@
+/*
+Author: Jack 
+Email:vincent1990wen@gmail.com
+Description:CMS 
+Version: 1.0
+*/
+
+
+
+/**
+ * Base Contents:
+ *
+ * 1.0 - _reset.scss
+ * 2.0 - _variables.scss
+ * 3.0 - _typography.scss
+ * 3.0 - _woocommerce.scss
+ */
+@import 'base/_reset.scss';
+@import 'base/_variables.scss';
+@import 'base/_typography.scss';
+
+
+/**
+ * Layout Contents:
+ *
+ * 1.0 - _header.scss
+ * 2.0 - _siderbar.scss
+ * 4.0 - _content.scss
+ * 4.0 - _footer.scss
+ */
+@import 'layout/admin/_header.scss';
+@import 'layout/admin/_sidebar.scss';
+@import 'layout/admin/_content.scss';	//include folder(pages/admin),(pages/others) 
+@import 'layout/admin/_footer.scss';
+
+
+/**
+ * Vendor Contents:
+ *
+ * 1.0 - _woocommerce.scss
+ * 2.0 - _wpml.scss
+ * 3.0 - _button.scss
+ */
