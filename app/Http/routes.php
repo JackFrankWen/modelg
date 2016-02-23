@@ -32,4 +32,22 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/admin', 'AdminController@index');
+    Route::group(['prefix' => 'admin','namespace' => 'Admin'], function () {
+
+            Route::get('/shopinfo','ShopinfoController@index');
+            Route::put('/shopinfo','ShopinfoController@update');
+
+ 			Route::resource('rates', 'RatesController',
+ 			        ['only' => ['index','store','destroy']]);
+ 			Route::post('/rates/{id}','RatesController@update');
+ 			//Log
+            Route::get('/log','LogController@index');
+            //Girls
+            Route::get('/girls/role','GirlRoleController@index');
+            Route::get('/girls/roster','GirlRosterController@index');
+            Route::get('/girls/photo','GirlPhotoController@index');
+
+
+
+    });
 });

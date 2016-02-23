@@ -123,6 +123,7 @@ function _init(){
 	 }
 }
 
+/*------------------------------------------*/
 
 //Show input and foucs on input after dbclick
 $(document).on('click', '.diamond',function() {

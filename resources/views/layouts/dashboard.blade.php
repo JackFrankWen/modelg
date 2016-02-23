@@ -17,26 +17,13 @@
 		<header>
 			<nav class="nav navbar-static-top" role="navigation">
 				<div class="navbar-header">
-					<a class="logo">Modelg</a>
+					<a class="logo" href="{{url('/')}}">Modelg</a>
 				</div>
 					<ul class="nav navbar-nav navbar-left">
 						<li class="sidebar-controller" aria-expanded="false"><a><i class="fa fa-navicon"></i></a></li>
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                  			<i class="fa fa-bell-o"></i>
-	                 			<span class="label label-warning">10</span>
-                			</a>
-                			<ul class="dropdown-menu">
-							    <li><a href="#">Action</a></li>
-							    <li><a href="#">Another action</a></li>
-							    <li><a href="#">Something else here</a></li>
-							    <li role="separator" class="divider"></li>
-							    <li><a href="#">Separated link</a></li>
-							 </ul>
-                		</li>
 						
 						<li>
 							<a><i class="fa fa-gears"></i></a>
@@ -70,44 +57,41 @@
 						<span>Rates</span>
 					</a>
 				</li>
-				<li>
-					<a>
-						<i class="fa fa-book"></i>
-						<span>Documentation</span>
-					</a>
-				</li>
+			
+				
 				<li class="treeview">
 					<a>
-						<i class="fa fa-table"></i>
-						<span>Tables</span>
+						<i class="fa fa-heart"></i>
+						<span>Girls</span>
 						<i class="fa fa-angle-left pull-right"></i>
 					</a>
 					<ul class="treeview-menu">
 							<li>
-								<a>
-									<i class="fa fa-circle-o"></i>
-									<span>Something</span>
+								<a href="/admin/girls/role">
+									<i class="fa fa-female"></i>
+									<span>Role</span>
 								</a>
 							</li>
 							<li>
-								<a>
-									<i class="fa fa-circle-o"></i>
-									<span>Something</span>
+								<a href="/admin/girls/roster">
+									<i class="fa fa-calendar"></i>
+									<span>Roster</span>
 								</a>
 							</li>
 							<li>
-								<a>
-									<i class="fa fa-circle-o"></i>
-									<span>Something</span>
+								<a href="/admin/girls/photo">
+									<i class="fa fa-camera"></i>
+									<span>Photo</span>
 								</a>
 							</li>
-							<li>
-								<a>
-									<i class="fa fa-circle-o"></i>
-									<span>Something</span>
-								</a>
-							</li>
+							
 					</ul>
+				</li>
+				<li>
+					<a href="/admin/log">
+						<i class="fa fa-book"></i>
+						<span>User Record</span>
+					</a>
 				</li>
 				<li>
 					<a>
@@ -115,69 +99,7 @@
 						<span>Widgets</span>
 					</a>
 				</li>
-				<li class="treeview">
-					<a>
-						<i class="fa fa-pie-chart"></i>
-						<span>Charts</span>
-						<i class="fa fa-angle-left pull-right"></i>
-					</a>
-					<ul class="treeview-menu">
-							<li>
-								<a>
-									<i class="fa fa-circle-o"></i>
-									<span>Something</span>
-								</a>
-							</li>
-							<li>
-								<a>
-									<i class="fa fa-circle-o"></i>
-									<span>Something</span>
-								</a>
-							</li>
-					</ul>
-				</li>
-				<li class="treeview">
-					<a>
-						<i class="fa fa-calendar"></i>
-						<span>Calendar</span>
-						<i class="fa fa-angle-left pull-right"></i>
-					</a>
-					<ul class="treeview-menu">
-							<li>
-								<a>
-									<i class="fa fa-circle-o"></i>
-									<span>Something</span>
-								</a>
-							</li>
-							<li>
-								<a>
-									<i class="fa fa-circle-o"></i>
-									<span>Something</span>
-								</a>
-							</li>
-					</ul>
-				</li>
-				<li class="treeview">
-					<a>
-						<i class="fa fa-envelope"></i>
-						<span>Mailbox</span>
-						<i class="fa fa-angle-left pull-right"></i>
-					</a>
-					<ul class="treeview-menu">
-							<li>
-								<a>
-									<i class="fa fa-circle-o"></i>
-									<span>Something</span>
-								</a>
-							</li>
-							<li>
-								<a>
-									<i class="fa fa-circle-o"></i>
-									<span>Something</span>
-								</a>
-							</li>
-					</ul>
-				</li>
+	
 
 			</ul>
 		</aside>
@@ -206,9 +128,6 @@
 					<li>
 					  <i class="fa fa-angle-right"></i>
 					  <a href="">{{ucfirst(Request::segment($i))}}</a>
-					  @if($i < count(Request::segments()) & $i > 0)
-					    {!!'<i class="fa fa-angle-right"></i>'!!}
-					  @endif
 					</li>
 					@endfor
 				</ol>
