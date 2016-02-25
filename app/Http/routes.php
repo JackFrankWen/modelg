@@ -44,6 +44,8 @@ Route::group(['middleware' => 'web'], function () {
             Route::get('/log','LogController@index');
             //Girls
             Route::get('/girls/role','GirlRoleController@index');
+            Route::post('/girls/role','GirlRoleController@store');
+
             Route::get('/girls/roster','GirlRosterController@index');
             Route::get('/girls/photo','GirlPhotoController@index');
 

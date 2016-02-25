@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Shopinfo;
-use Illuminate\Database\Eloquent\Model;
+
+use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class ShopinfoController extends Controller
@@ -43,9 +43,21 @@ class ShopinfoController extends Controller
      */
     public function update(Request $request)
     {
+        
+        $input = $request->all();
+        $messages =
+        $validator = Validator::make($input, [
+                    'shop_name' => 'required',
+                    'shop_postcode' => 'required|numeric',
+                ]);
+        if ($validator->fails()) {
+            return redirect('admin/shopinfo')
+                 ->withErrors($validator)
+                ->withInput();
+        }
+
         $shop = Shopinfo::findOrNew(0);
        
-        $input = $request->all();
         $shop->fill($input)->save();
 
         return redirect()->action('Admin\ShopinfoController@index');

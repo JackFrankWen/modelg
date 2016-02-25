@@ -1,0 +1,34 @@
+.girls{
+    padding: 15px 0;
+    @media(min-width:767px ){
+	    margin-right: -15px;
+	    margin-left: -15px;
+    }
+    .girl{
+    	margin-bottom: 15px;
+
+    }
+}
+.girl-form {
+    @extend .add-form;
+    .edt{
+    	margin-bottom:10px;
+    	padding-right:0px;
+    }
+    .diamond{
+    	padding:0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+    .crop,.dltgirl{
+    	color: blue;
+    }
+    .fa-3{
+    	font-size: 1.3em;
+    }
+    input[type="text"]{
+    	padding:initial;
+    }
+
+}

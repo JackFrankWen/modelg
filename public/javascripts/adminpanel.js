@@ -40,10 +40,7 @@ function _init(){
 	 */
 	$.jack.dropdownMenu = function(){
 		$('.treeview').on('click',  function(event) {
-						// can not click submenu when sidebar closed
-						if ($('.sidebar-controller').attr('aria-expanded')==='true') {
-							return
-						}
+						
 						//map sider
 						var sidebar =  $.jack.sidebar;
 						var _this = $(this);
@@ -95,7 +92,7 @@ function _init(){
 	/* Push menu
 	 *
 	 * @type Function
-	 * @description Dropdown menu can the main object for the template's app.
+	 * @description Push menu can the main object for the template's app.
 	 *              It's used for implementing functions and options related
 	 */
 	 $.jack.pushMenu = function(){
@@ -104,7 +101,6 @@ function _init(){
 	 		var Cwindow = $(window).width();
 	 		var isOpen = $('.sidebar-controller').attr('aria-expanded');
 	 		var screenWidth = $(window).width();
-	 		console.log(screenWidth);
 	 		if (screenWidth > 767) {
 	 			if (isOpen == 'false') {
 	 					// collapse sidebar
@@ -117,23 +113,35 @@ function _init(){
 	 				};
 	 		} else {
 	 			// Open sidebar when screensize on mobile size
+	 			if (isOpen == 'false') {
+	 					// collapse sidebar
+	 					$('body').addClass('sidebar-mobile');
+	 					$('.sidebar-controller').attr('aria-expanded','true');
+	 				} else {
+	 					// open sidebar
+	 					$('body').removeClass('sidebar-mobile');
+	 					$('.sidebar-controller').attr('aria-expanded','false');
+	 				};
+
 	 		}
 	 	});
 
 	 }
 }
 
-/*------------------------------------------*/
+/*-----------------Shop Info,Rates Page------------------------*/
 
 //Show input and foucs on input after dbclick
 $(document).on('click', '.diamond',function() {
 	var _this = $(this);
 	var val = _this.text();
 	var _next = _this.next();
+	var _pre = _this.prev();
 	_this.css('display','none');
+	_pre.css('display','none');
 	//Get span text
 	_next.val(val);
-	_next.css('display','block').focus();
+	_next.css('display','initial').focus();
 
 });
 
@@ -142,9 +150,10 @@ $(document).on('focusout', '.ript',function() {
 	var _this = $(this);
 	var val = _this.val();
 	var _prev = _this.prev();
+	var _prevall =  _this.prevAll()
 	_this.css('display','none');
 	_prev.text(val);
-	_prev.css('display','block');
+	_prevall.css('display','initial');
 
 });
 
@@ -155,6 +164,7 @@ $(document).on('click', '.new',function() {
 	_this.clone().insertAfter(_this);
 
 });
+
 //Delete this item
 $(document).on('click', '.dlt',function() {
 	/* Act on the event */
@@ -166,7 +176,7 @@ $(document).on('click', '.dlt',function() {
 		alert('Last one cant delete');
 	}
 });
-
+/************************************/
 
 $(function () {
 	/*
@@ -181,8 +191,8 @@ $(function () {
 /* Ajax 
 	 *
 	 * @type Function
-	 * @description Dropdown menu can the main object for the template's app.
-	 *              It's used for implementing functions and options related
+	 * @description Remove item from rates page
+	 *              
 	 */
 
 $('.rm').click(function(event) {
@@ -191,7 +201,6 @@ $('.rm').click(function(event) {
 	var form = _this.parents('.rates-wrap');
 	var url = _this.parent().find('input[name=delete]').val();
 	var item = $('.rates-wrap');
-	console.log(item);
 	$.ajax({
 		url: url,
 		type: 'POST',
@@ -200,16 +209,15 @@ $('.rm').click(function(event) {
 				},
 	})
 	.done(function(data) {
-		console.log(data);
 		form.hide('slow', function() {
 			$(this).detach();
+			item.unwrap('.clos');
+			item = $('.rates-wrap');
+			for (var i = 0; i < item.length; i+=3) {
+				item.slice(i, i+3).wrapAll('<div class="row clos"></div>')
+			};
 		});
-		setTimeout('', 5000);
-		item.unwrap('.clos');
-		console.log(item.length);
-		for (var i = 0; i < item.length; i+=3) {
-			item.slice(i, i+3).wrapAll('<div class="row clos"></div>')
-		};
+		
 
 	})
 	.fail(function(xhr, ajaxOptions, thrownError) {
@@ -227,16 +235,18 @@ $('.rm').click(function(event) {
 /* Ajax 
 	 *
 	 * @type Function
-	 * @description Dropdown menu can the main object for the template's app.
-	 *              It's used for implementing functions and options related
+	 * @description update item page information.
+	 *              
 	 */
 $(".updt").click(function(event) {
-	var _this =$(this);
+	var _this = $(this);
 	var token =  $("meta[name=_token]").attr('content');
 	var form = _this.parent();
 
 	var inputinfo = form.find('input[name^=rates_info]');
 	var inputprice = form.find('input[name^=rates_price]');
+	var rates_name = form.find('input[name^=rates_name]').val();
+	console.log(rates_name);
 	var rates_info= [];
 	var rates_price= [];
 	var url = form.attr('action');
@@ -256,7 +266,8 @@ $(".updt").click(function(event) {
 		data: {
 				_token:token,
 				rates_info,
-				rates_price
+				rates_price,
+				rates_name
 				},
 	})
 	.done(function(data) {
@@ -275,3 +286,4 @@ $(".updt").click(function(event) {
 	});
 	
 });
+

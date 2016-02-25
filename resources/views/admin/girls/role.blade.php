@@ -6,9 +6,61 @@
 	<div class="row role"> 
 		<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#createGirl">Add a new girl</button>
 		<button type="button" class="btn btn-danger">Delete all</button>
+	 </div>
 
+	 <div class="row girls">
+	 	@for ($i = 0; $i < 6; $i++)
+	 	<div class="col-xs-12 col-sm-6 col-md-4 girl">
+
+	 		<form action="{{action('Admin\RatesController@store')}}" method="post" class="girl-form col-xs-12" >
+	 			
+	 			<div class="col-xs-6 edt">
+	 				<img class="img-responsive" src="{{URL::asset('/images/girls/1.jpg')}}">
+	 			</div>
+
+				<div class="col-xs-6 edt" data-toggle="tooltip" data-placement="top" title="Click to edit">
+						<label>Name:</label>
+						<span class=" diamond">Amanda</span>
+						<input type="text" name="rates_info[]" class="ript" value="45 min">
+				</div>
+
+				<div class="col-xs-6 edt" data-toggle="tooltip" data-placement="top" title="Click to edit">
+						<label>Age:</label>
+						<span class=" diamond">18</span>
+						<input type="text" name="rates_info[]" class="ript" value="45 min">
+				</div>
+
+				<div class="col-xs-6 edt" data-toggle="tooltip" data-placement="top" title="Click to edit">
+						<label>From:</label>
+						<span class=" diamond">China</span>
+						<input type="text" name="rates_info[]" class="ript" value="45 min">
+				</div>
+				
+
+				<div class="col-xs-6 edt" data-toggle="tooltip">
+						<label class="crop hidden-xs">Photo</label>
+						<i class="fa fa-camera fa-3 hidden-xs"></i>
+						
+						<label class="dltgirl">Delete</label>
+						<i class="fa fa-times fa-2"></i>
+						
+				</div>
+	 				
+				
+				
+				<div class="col-xs-12" data-toggle="tooltip" data-placement="top" title="Click to edit"1>
+						<textarea class="form-control" name="girl_description" rows="3" maxlength="400"></textarea>
+				</div>
+				
+	 				
+	 		</form>
+	 	</div>
+	 	@endfor
 	 </div>
 </div>
+
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="createGirl" tabindex="-1" role="dialog" aria-labelledby="createGirlLabel" data-backdrop="static">
@@ -18,26 +70,44 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title text-center" >Create a girl</h4>
       </div>
+      <form action="{{url('admin/girls/role')}}" method="post" class="girl_form" enctype="multipart/form-data">
       <div class="modal-body">
+      		@if (count($errors) > 0)
+      		    <div class="alert alert-danger">
+      		        <ul>
+      		            @foreach ($errors->all() as $error)
+      		                <li>{{ $error }}</li>
+      		            @endforeach
+      		        </ul>
+      		    </div>
+      		@endif
 	      	<div class="form-group">
 	            <label for="girl_name">Girl Name</label>
-	            <input type="email" class="form-control">
+	            <input type="text" name="girl_name" class="form-control">
 	          </div>
 	        <div class="form-group">
 	            <label for="girl_age">Girl Age</label>
-	            <input type="password" class="form-control">
+	            <input type="text" name="girl_age" class="form-control">
 	        </div>
 	        <div class="form-group">
 	            <label for="exampleInputPassword1">Girl National</label>
-	            <input type="password" class="form-control">
+	            <input type="text" name="girl_nation" class="form-control">
 	        </div>
 	        <label for="exampleInputPassword1">Girl Description</label>
-	        <textarea class="form-control" rows="3"></textarea>
+	        <textarea class="form-control" name="girl_description" rows="3" maxlength="400"></textarea>
+	        <div class="form-group">
+	            <label for="exampleInputFile">File input</label>
+	            <input type="file" name="image" id="imgUpload">
+	        </div>
+
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save</button>
+          {!! csrf_field() !!}
+        <button type="submit" id ="addg" class="btn btn-primary">Save</button>
       </div>
+       </form>
     </div>
   </div>
 </div>

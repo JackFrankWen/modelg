@@ -13,21 +13,6 @@
 
 }
 
-/*
- *	2.0 Collapse-content
- *
- *--------------------------
- */
-.sidebar-collapse .wrap-content {
-    margin-left: 50px;
-}
-
-.sidebar-open .wrap-content{
-    @media (max-width: 767px){
-        margin-left:0;
-    }
-}
-
 .content-header {
     width: 100%;
     padding: 20px 15px 0px;
@@ -53,8 +38,38 @@
         width: 100%;
         margin: 0px;
     }
-    @import 'pages/admin/_rates.scss';
     @import 'pages/admin/_shopinfo.scss';
+    @import 'pages/admin/_rates.scss';
+    @import 'pages/admin/_role.scss';
     padding: 0px 15px 15px;
     width: 100%;
 }
+
+/*
+ *	2.0 Collapse-content
+ *
+ *--------------------------
+ */
+.sidebar-collapse .wrap-content {
+    margin-left: 50px;
+}
+
+.sidebar-open .wrap-content{
+    @media (max-width: 767px){
+        margin-left:0;
+    }
+}
+
+
+
+/*
+ *  3.0 Moblie-collapse-sidebar
+ *
+ *---------------------------------
+ */
+ .sidebar-mobile .wrap-content{
+    -webkit-transform: translate(230px, 0);
+        -ms-transform: translate(230px, 0);
+        -o-transform: translate(230px, 0);
+        transform: translate(230px, 0);
+ }

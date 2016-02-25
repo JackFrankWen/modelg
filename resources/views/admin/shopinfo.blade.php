@@ -5,7 +5,16 @@
 	{{-- <form action="{{action('Admin\ShopinfoController@update')}}" method="POST" class="form-horizontal shopinfo clearfix"> --}}
 	<form action="{{url('admin\shopinfo')}}" method="POST" class="form-horizontal shopinfo clearfix">
 		<input type="hidden" name="_method" value="PUT">
-		
+		@if (count($errors) > 0)
+		    <div class="alert alert-danger">
+		        <ul>
+		            @foreach ($errors->all() as $error)
+		                <li>{{ $error }}</li>
+		            @endforeach
+		        </ul>
+		    </div>
+		@endif
+
 	  <div class="form-group">
 	    <label class="col-xs-4 control-label" for="formGroupInputLarge">Name:</label>
 	    <div class="col-xs-8">

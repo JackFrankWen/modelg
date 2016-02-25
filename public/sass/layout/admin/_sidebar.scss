@@ -8,6 +8,7 @@
         color: #b8c7ce;
     }
     @media (max-width: 767px){
+        padding-top:100px;
         -webkit-transform: translate(-230px, 0);
             -ms-transform: translate(-230px, 0);
             -o-transform: translate(-230px, 0);
@@ -132,3 +133,15 @@
     position: absolute;
     left: 50px;
 }
+
+/*
+ *  3.0 Moblie-collapse-sidebar
+ *
+ *---------------------------------
+ */
+ .sidebar-mobile #main-sidebar{
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+ }

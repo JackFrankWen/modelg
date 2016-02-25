@@ -80,9 +80,12 @@ class RatesController extends Controller
 
         $input = $request->all();
         $rate_cat = Rates_Cat::findOrFail($id);
-        $rate_cat->fill($input)->save();
+        $rate_cat->rates_name = $input['rates_name'];
+        $rate_cat->save();
+
 
         $ratesAmount = $rate_cat->rates->count();
+
         if(isset($input['rates_info'])){
             $inputAmount = sizeof($input['rates_info']);
         }else{
@@ -94,10 +97,11 @@ class RatesController extends Controller
            $rate_cat->addChildrates($amount,$id,$rate_cat,$input);
         }elseif ($amount == 0) {
             //update
-            $rate_cat->updateChildrates($input);
+            $rate_cat->updateChildrates($input,$id);
+
         }else{
             //delete
-            $amount = abs($amount);
+            $amount = abs($amount);//make positive number
             $rate_cat->deleteChildrates($amount,$id,$input);
         }
           

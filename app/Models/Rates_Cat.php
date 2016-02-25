@@ -87,9 +87,9 @@ class Rates_Cat extends Model
      *
      * @param  int,int 
      */
-    public function updateChildrates($input)
+    public function updateChildrates($input,$id)
     {
-      $rates = Rates::all();
+       $rates = Rates::where('rates_cat_id',$id)->get();
       $i = 0;
       foreach ($rates as $rate) {
 
