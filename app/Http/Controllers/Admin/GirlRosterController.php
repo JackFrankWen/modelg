@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Girl_Roster;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -25,6 +26,14 @@ class GirlRosterController extends Controller
       */
      public function index()
      {
-         return view('admin.girls.roster');
+        $rosters = Girl_Roster::all();
+        foreach ($rosters as $roster) {
+          $roster->girl_name = $roster->get_girl->girl_name;
+          $roster->img_url = $roster->get_girl->img_url;
+          
+        }
+        return view('admin.girls.roster', [
+                 'rosters' => $rosters
+             ]);
      }
 }

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Girls;
+use App\Models\Girl_Roster;
+
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -27,7 +30,11 @@ class GirlRoleController extends Controller
       */
      public function index()
      {
-         return view('admin.girls.role');
+        $girls = Girls::All();
+        
+        return view('admin.girls.role', [
+                 'girls' => $girls
+             ]);
      }
 
      /**
@@ -40,18 +47,24 @@ class GirlRoleController extends Controller
      {
         $input = $request->all();
 
-        // $validator = Validator::make($input, [
-        //             'girl_name' => 'required',
-        //         ]);
-        // if ($validator->fails()) {
-        //    return ;
-        // }
+        $validator = Validator::make($input, [
+                    'girl_name' => 'required',
+                ]);
+        if ($validator->fails()) {
+           return 'some error';
+        }
+        $girl = new Girls;
         
-        $mime =  $request->file('image')->getMimeType();
-        $isImage =  $request->file('image')->getClientOriginalExtension();
+        // $isImage =  $request->file('image')->getClientOriginalExtension();
+        // $mime =  $request->file('image')->getMimeType();
         $imageName = $request->file('image')->getClientOriginalName();
         $imageUrl =  public_path() . '/images/girls/';
         $request->file('image')->move($imageUrl, $imageName);
+        $girl->img_url ='/images/girls/'.$imageName;
+        $girl->fill($input)->save();
+
+        $roster = new Girl_Roster;
+        $girl->girl_roster()->save($roster);
         return redirect()->action('Admin\GirlRoleController@index');
          
      }

@@ -9,53 +9,51 @@
 	 </div>
 
 	 <div class="row girls">
-	 	@for ($i = 0; $i < 6; $i++)
-	 	<div class="col-xs-12 col-sm-6 col-md-4 girl">
+	 	@foreach($girls as $girl)
+ 	 	<div class="col-xs-12 col-sm-6 col-md-4 girl">
+ 	 		<form action="{{action('Admin\RatesController@store')}}" method="post" class="girl-form col-xs-12" >
+ 	 			
+ 	 			<div class="col-xs-6 edt">
+ 	 				<div class="img-box">
+ 	 					<img class="img-responsive" src="{{URL::asset($girl->img_url)}}">
+ 	 				</div>
+ 	 			</div>
 
-	 		<form action="{{action('Admin\RatesController@store')}}" method="post" class="girl-form col-xs-12" >
-	 			
-	 			<div class="col-xs-6 edt">
-	 				<img class="img-responsive" src="{{URL::asset('/images/girls/1.jpg')}}">
-	 			</div>
+ 				<div class="col-xs-6 edt" data-toggle="tooltip" data-placement="top" title="Click to edit">
+ 						<label>Name:</label>
+ 						<span class=" diamond">{{$girl->girl_name}}</span>
+ 						<input type="text" name="rates_info[]" class="ript" value="45 min">
+ 				</div>
 
-				<div class="col-xs-6 edt" data-toggle="tooltip" data-placement="top" title="Click to edit">
-						<label>Name:</label>
-						<span class=" diamond">Amanda</span>
-						<input type="text" name="rates_info[]" class="ript" value="45 min">
-				</div>
+ 				<div class="col-xs-6 edt" data-toggle="tooltip" data-placement="top" title="Click to edit">
+ 						<label>Age:</label>
+ 						<span class=" diamond">{{$girl->girl_age}}</span>
+ 						<input type="text" name="rates_info[]" class="ript" value="45 min">
+ 				</div>
 
-				<div class="col-xs-6 edt" data-toggle="tooltip" data-placement="top" title="Click to edit">
-						<label>Age:</label>
-						<span class=" diamond">18</span>
-						<input type="text" name="rates_info[]" class="ript" value="45 min">
-				</div>
+ 				<div class="col-xs-6 edt" data-toggle="tooltip" data-placement="top" title="Click to edit">
+ 						<label>From:</label>
+ 						<span class=" diamond">{{$girl->girl_nation}}</span>
+ 						<input type="text" name="rates_info[]" class="ript" value="45 min">
+ 				</div>
 
-				<div class="col-xs-6 edt" data-toggle="tooltip" data-placement="top" title="Click to edit">
-						<label>From:</label>
-						<span class=" diamond">China</span>
-						<input type="text" name="rates_info[]" class="ript" value="45 min">
-				</div>
-				
+ 				<div class="col-xs-6 edt" data-toggle="tooltip">
+ 						<label class="crop hidden-xs">Photo</label>
+ 						<i class="fa fa-camera fa-3 hidden-xs"></i>
+ 						
+ 						<label class="dltgirl">Delete</label>
+ 						<i class="fa fa-times fa-2"></i>
+ 						
+ 				</div>
+ 	 				
+ 				<div class="col-xs-12" data-toggle="tooltip" data-placement="top" title="Click to edit"1>
+ 						<textarea class="form-control" name="girl_description" rows="3" maxlength="400">{{$girl->girl_description}}</textarea>
+ 				</div>
+ 				
+ 	 		</form>
+ 	 	</div>
+	 	@endforeach
 
-				<div class="col-xs-6 edt" data-toggle="tooltip">
-						<label class="crop hidden-xs">Photo</label>
-						<i class="fa fa-camera fa-3 hidden-xs"></i>
-						
-						<label class="dltgirl">Delete</label>
-						<i class="fa fa-times fa-2"></i>
-						
-				</div>
-	 				
-				
-				
-				<div class="col-xs-12" data-toggle="tooltip" data-placement="top" title="Click to edit"1>
-						<textarea class="form-control" name="girl_description" rows="3" maxlength="400"></textarea>
-				</div>
-				
-	 				
-	 		</form>
-	 	</div>
-	 	@endfor
 	 </div>
 </div>
 

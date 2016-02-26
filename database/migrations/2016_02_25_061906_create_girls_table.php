@@ -17,9 +17,10 @@ class CreateGirlsTable extends Migration
                     $table->string('girl_name');
                     $table->string('girl_age');
                     $table->string('girl_nation');
+                    $table->mediumText('girl_description');
                     $table->string('img_url');
                     $table->boolean('active');
-                });
+        });
     }
 
     /**

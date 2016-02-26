@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -25,6 +25,7 @@ class GirlPhotoController extends Controller
       */
      public function index()
      {
-         return view('admin.girls.photo');
+      
+       return view('admin.girls.photo');
      }
 }

@@ -668,19 +668,32 @@ header nav {
 .content-body .girl-form input[type="text"] {
   padding: initial;
 }
+/* line 33, ../sass/pages/admin/_role.scss */
+.content-body .girl-form .img-box {
+  height: 200px;
+}
+/* line 3, ../sass/pages/admin/_roster.scss */
+.content-body .roster .thumb-box .g-thumb {
+  height: 100px;
+  width: auto;
+}
+/* line 8, ../sass/pages/admin/_roster.scss */
+.content-body .roster input[type="checkbox"] {
+  margin-left: 10px;
+}
 
 /*
  *	2.0 Collapse-content
  *
  *--------------------------
  */
-/* line 53, ../sass/layout/admin/_content.scss */
+/* line 54, ../sass/layout/admin/_content.scss */
 .sidebar-collapse .wrap-content {
   margin-left: 50px;
 }
 
 @media (max-width: 767px) {
-  /* line 57, ../sass/layout/admin/_content.scss */
+  /* line 58, ../sass/layout/admin/_content.scss */
   .sidebar-open .wrap-content {
     margin-left: 0;
   }
@@ -691,7 +704,7 @@ header nav {
  *
  *---------------------------------
  */
-/* line 70, ../sass/layout/admin/_content.scss */
+/* line 71, ../sass/layout/admin/_content.scss */
 .sidebar-mobile .wrap-content {
   -webkit-transform: translate(230px, 0);
   -ms-transform: translate(230px, 0);

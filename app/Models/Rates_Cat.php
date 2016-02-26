@@ -13,7 +13,7 @@ class Rates_Cat extends Model
     public $childrates = null;
 
     /**
-     * Get the rates for the rates_cat.
+     * Get the rates item from the rates_cat.
      */
     public function rates()
     {
@@ -24,9 +24,8 @@ class Rates_Cat extends Model
      * Delete table data rate_cat and releted child rates
      */
     public function delete(){
-      // delete all related rates 
+      // delete all related rates item
       $this->rates()->delete();
-      // delete the rates_cat
       return parent::delete();
     }
 
@@ -43,10 +42,8 @@ class Rates_Cat extends Model
           $rate_cat->rates()->save($rates[$i]);
       }
       $rates = Rates::where('rates_cat_id',$id)->get();
-      // $rates->reassign($rates,$input);
-      $i = 0;
-
       //Reassgin rates_order to all child rates
+      $i = 0;
       foreach ($rates as $rate) {
         $rates[$i]->rates_info = $input['rates_info'][$i];
         $rates[$i]->rates_price = $input['rates_price'][$i];

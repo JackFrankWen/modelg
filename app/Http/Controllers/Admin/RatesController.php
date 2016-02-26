@@ -101,7 +101,7 @@ class RatesController extends Controller
 
         }else{
             //delete
-            $amount = abs($amount);//make positive number
+            $amount = abs($amount);//make unsiged number
             $rate_cat->deleteChildrates($amount,$id,$input);
         }
           
