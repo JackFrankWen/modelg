@@ -129,6 +129,17 @@ function _init(){
 	 }
 }
 
+/************************************/
+$(function () {
+	/*
+		Description: Initialize
+		
+	*/
+  $('[data-toggle="tooltip"]').tooltip();
+  $.jack.dropdownMenu();
+  $.jack.pushMenu();
+
+});
 /*-----------------Shop Info,Rates Page------------------------*/
 
 //Show input and foucs on input after dbclick
@@ -176,17 +187,7 @@ $(document).on('click', '.dlt',function() {
 		alert('Last one cant delete');
 	}
 });
-/************************************/
 
-$(function () {
-	/*
-		Description: Initialize
-		
-	*/
-  $('[data-toggle="tooltip"]').tooltip();
-  $.jack.dropdownMenu();
-  $.jack.pushMenu();
-});
 
 /* Ajax 
 	 *
@@ -209,6 +210,7 @@ $('.rm').click(function(event) {
 				},
 	})
 	.done(function(data) {
+		console.log(data);
 		form.hide('slow', function() {
 			$(this).detach();
 			item.unwrap('.clos');
@@ -235,7 +237,7 @@ $('.rm').click(function(event) {
 /* Ajax 
 	 *
 	 * @type Function
-	 * @description update item page information.
+	 * @description On rates page.update in .
 	 *              
 	 */
 $(".updt").click(function(event) {
@@ -287,3 +289,84 @@ $(".updt").click(function(event) {
 	
 });
 
+
+/* Ajax 
+	 *
+	 * @type Function
+	 * @description Delete girls . on girls page
+	 *              
+	 */
+
+$('.dltgirl').click(function(event) {
+	var _this =$(this);
+	var token =  $("meta[name=_token]").attr('content');
+	var url = _this.attr('data-url');
+	var form = _this.parents('.girl');
+	alert(form);
+	$.ajax({
+		url: url,
+		type: 'POST',
+		data: {_method: 'delete',
+				_token:token
+				},
+	})
+	.done(function(data) {
+
+	console.log(data);
+	form.hide('slow', function() {
+		$(this).detach();
+		
+	});	
+
+	})
+	.fail(function(xhr, ajaxOptions, thrownError) {
+		console.log("error");
+		console.log(xhr.status);
+		console.log(xhr.responseText);
+		console.log(thrownError);
+	})
+	.always(function() {
+		console.log("complete");
+	});
+	
+});
+
+/* Ajax 
+	 *
+	 * @type Function
+	 * @description Update girl roster. on girls page
+	 *              
+	 */
+$('.rst-updt').click(function(event) {
+	var _this =$(this).parent();
+	var token = $("meta[name=_token]").attr('content');
+	var input = [];
+	var check = _this.prev().children('input');
+	var leng =check.length;
+
+	var url = _this.attr('data-url');
+	check.each(function(index, el) {
+		input.push($(this).val());
+	});
+	console.log(input);
+	$.ajax({
+		url: url,
+		type: 'POST',
+		data: {_method: 'delete',
+				_token:token
+				},
+	})
+	.done(function(data) {
+
+	})
+	.fail(function(xhr, ajaxOptions, thrownError) {
+		console.log("error");
+		// console.log(xhr.status);
+		// console.log(xhr.responseText);
+		// console.log(thrownError);
+	})
+	.always(function() {
+		console.log("complete");
+	});
+	
+});

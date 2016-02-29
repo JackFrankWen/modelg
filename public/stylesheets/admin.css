@@ -659,16 +659,17 @@ header nav {
 /* line 24, ../sass/pages/admin/_role.scss */
 .content-body .girl-form .crop, .content-body .girl-form .dltgirl {
   color: blue;
+  cursor: pointer;
 }
-/* line 27, ../sass/pages/admin/_role.scss */
+/* line 28, ../sass/pages/admin/_role.scss */
 .content-body .girl-form .fa-3 {
   font-size: 1.3em;
 }
-/* line 30, ../sass/pages/admin/_role.scss */
+/* line 31, ../sass/pages/admin/_role.scss */
 .content-body .girl-form input[type="text"] {
   padding: initial;
 }
-/* line 33, ../sass/pages/admin/_role.scss */
+/* line 34, ../sass/pages/admin/_role.scss */
 .content-body .girl-form .img-box {
   height: 200px;
 }

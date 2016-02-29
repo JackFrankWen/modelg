@@ -11,7 +11,7 @@
 	 <div class="row girls">
 	 	@foreach($girls as $girl)
  	 	<div class="col-xs-12 col-sm-6 col-md-4 girl">
- 	 		<form action="{{action('Admin\RatesController@store')}}" method="post" class="girl-form col-xs-12" >
+ 	 		<form action="{{url('admin/girls/role/'.$girl->id)}}" method="post" class="girl-form col-xs-12" >
  	 			
  	 			<div class="col-xs-6 edt">
  	 				<div class="img-box">
@@ -41,7 +41,7 @@
  						<label class="crop hidden-xs">Photo</label>
  						<i class="fa fa-camera fa-3 hidden-xs"></i>
  						
- 						<label class="dltgirl">Delete</label>
+ 						<label class="dltgirl" data-url="{{url('admin/girls/role/'.$girl->id)}}">Delete</label>
  						<i class="fa fa-times fa-2"></i>
  						
  				</div>

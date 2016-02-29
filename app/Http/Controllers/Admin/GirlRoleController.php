@@ -68,4 +68,19 @@ class GirlRoleController extends Controller
         return redirect()->action('Admin\GirlRoleController@index');
          
      }
+
+       /**
+       * Remove the cats and cats releated data.
+       *
+       * @param  int  $id
+       * @return \Illuminate\Http\Response
+       */
+      public function destroy($id)
+      {
+          $girl = Girls::find($id);
+          $girl->delete();
+          
+       
+          return 'good';
+      }
 }

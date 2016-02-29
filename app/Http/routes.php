@@ -40,11 +40,13 @@ Route::group(['middleware' => 'web'], function () {
  			Route::resource('rates', 'RatesController',
  			        ['only' => ['index','store','destroy']]);
  			Route::post('/rates/{id}','RatesController@update');
+
  			//Log
             Route::get('/log','LogController@index');
             //Girls
             Route::get('/girls/role','GirlRoleController@index');
             Route::post('/girls/role','GirlRoleController@store');
+            Route::delete('/girls/role/{id}','GirlRoleController@destroy');
 
             Route::get('/girls/roster','GirlRosterController@index');
             Route::get('/girls/photo','GirlPhotoController@index');

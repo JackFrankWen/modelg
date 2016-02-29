@@ -108,7 +108,7 @@ class RatesController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the cats and cats releated data.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
