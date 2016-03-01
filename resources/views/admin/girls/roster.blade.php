@@ -31,12 +31,12 @@
 			        	<input type="checkbox">Mon</input>
 			        @endif
 			        @if($roster['tue'])
-			        	<input type="checkbox" checked="true">Tue</input>
+			        	<input type="checkbox" checked="true" >Tue</input>
 			        @else
 			        	<input type="checkbox">Tue</input>
 			        @endif
 			        @if($roster['wed'])
-			        	<input type="checkbox" checked="true">Wed</input>
+			        	<input type="checkbox" checked="true" >Wed</input>
 			        @else
 			        	<input type="checkbox">Wed</input>
 			        @endif
@@ -51,7 +51,7 @@
 			        	<input type="checkbox">Fri</input>
 			        @endif
 			        @if($roster['sat'])
-			        	<input type="checkbox" checked="true">Sat</input>
+			        	<input type="checkbox" checked="true" >Sat</input>
 			        @else
 			        	<input type="checkbox">Sat</input>
 			        @endif

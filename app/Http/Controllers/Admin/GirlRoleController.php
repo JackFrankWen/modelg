@@ -79,8 +79,7 @@ class GirlRoleController extends Controller
       {
           $girl = Girls::find($id);
           $girl->delete();
-          
-       
+
           return 'good';
       }
 }

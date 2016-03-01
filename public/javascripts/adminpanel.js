@@ -252,7 +252,7 @@ $(".updt").click(function(event) {
 	var rates_info= [];
 	var rates_price= [];
 	var url = form.attr('action');
-
+	//get form input value
 	inputinfo.each(function(index, el) {
 		 rates_info.push($(this).val());
 	});
@@ -342,28 +342,25 @@ $('.rst-updt').click(function(event) {
 	var token = $("meta[name=_token]").attr('content');
 	var input = [];
 	var check = _this.prev().children('input');
-	var leng =check.length;
-
-	var url = _this.attr('data-url');
+	var url = $(this).attr('data-url');
+	console.log(url);
 	check.each(function(index, el) {
-		input.push($(this).val());
+		input.push($(this).is(':checked'));
 	});
-	console.log(input);
 	$.ajax({
 		url: url,
 		type: 'POST',
-		data: {_method: 'delete',
-				_token:token
+		data: {
+				_token:token,
+				input
 				},
 	})
 	.done(function(data) {
-
+		console.log(data);
 	})
 	.fail(function(xhr, ajaxOptions, thrownError) {
 		console.log("error");
-		// console.log(xhr.status);
-		// console.log(xhr.responseText);
-		// console.log(thrownError);
+	
 	})
 	.always(function() {
 		console.log("complete");

@@ -19,6 +19,7 @@ class GirlRosterController extends Controller
      {
          $this->middleware('auth');
      }
+
      /**
       * Display a listing of the resource.
       *
@@ -30,10 +31,27 @@ class GirlRosterController extends Controller
         foreach ($rosters as $roster) {
           $roster->girl_name = $roster->get_girl->girl_name;
           $roster->img_url = $roster->get_girl->img_url;
-          
         }
         return view('admin.girls.roster', [
                  'rosters' => $rosters
              ]);
+     }
+
+     /**
+      * Update Roster girl data.
+      *
+      * @param  \Illuminate\Http\Request  $request
+      * @param  int  $id
+      * @return \Illuminate\Http\Response
+      */
+     public function update(Request $request,$id)
+     {
+        $roster = Girl_Roster::find($id);
+        $input = $request->all();
+        
+        $array = $input['input'];
+        $roster['mon'] = $array[0];
+        $roster->save();
+        return ;
      }
 }

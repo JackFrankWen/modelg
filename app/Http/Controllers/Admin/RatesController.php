@@ -82,8 +82,6 @@ class RatesController extends Controller
         $rate_cat = Rates_Cat::findOrFail($id);
         $rate_cat->rates_name = $input['rates_name'];
         $rate_cat->save();
-
-
         $ratesAmount = $rate_cat->rates->count();
 
         if(isset($input['rates_info'])){
