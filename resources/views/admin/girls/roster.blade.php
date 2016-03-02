@@ -56,12 +56,11 @@
 			        	<input type="checkbox">Sat</input>
 			        @endif
 			        @if($roster['sun'])
-			        	<input type="checkbox" checked="true">Sun</input>
+			        	<input type="checkbox" checked="true" value="" >Sun</input>
 			        @else
-			        	<input type="checkbox">Sun</input>
+			        	<input type="checkbox" value="" >Sun</input>
 			        @endif
 			        </td>
-
 			         <td><input type="button" class="rst-updt" value="update" data-url="{{url('admin/girls/roster/'.$roster['id'])}}"></input></td>
 			      </tr>
 			      <?php $i++; ?>

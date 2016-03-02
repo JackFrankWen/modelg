@@ -51,7 +51,13 @@ class GirlRosterController extends Controller
         
         $array = $input['input'];
         $roster['mon'] = $array[0];
+        $roster['tue'] = $array[1];
+        $roster['wed'] = $array[2];
+        $roster['thu'] = $array[3];
+        $roster['fri'] = $array[4];
+        $roster['sat'] = $array[5];
+        $roster['sun'] = $array[6];
         $roster->save();
-        return ;
+        return $array;
      }
 }

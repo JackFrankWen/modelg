@@ -38,7 +38,7 @@
  				</div>
 
  				<div class="col-xs-6 edt" data-toggle="tooltip">
- 						<label class="crop hidden-xs">Photo</label>
+ 						<a class="crop hidden-xs" href="{{url('admin/girls/role/'.$girl->id.'/photo')}}">Photo</a>
  						<i class="fa fa-camera fa-3 hidden-xs"></i>
  						
  						<label class="dltgirl" data-url="{{url('admin/girls/role/'.$girl->id)}}">Delete</label>

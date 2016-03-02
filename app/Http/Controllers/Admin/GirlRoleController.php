@@ -68,6 +68,16 @@ class GirlRoleController extends Controller
         return redirect()->action('Admin\GirlRoleController@index');
          
      }
+       /**
+       * Remove the cats and cats releated data.
+       *
+       * @param  int  $id
+       * @return \Illuminate\Http\Response
+       */
+      public function show($id)
+      {
+          return view('admin.girls.photo');
+      }
 
        /**
        * Remove the cats and cats releated data.

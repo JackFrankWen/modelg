@@ -345,8 +345,10 @@ $('.rst-updt').click(function(event) {
 	var url = $(this).attr('data-url');
 	console.log(url);
 	check.each(function(index, el) {
-		input.push($(this).is(':checked'));
+		var int = ($(this).is(':checked')) ? 1:0;
+		input.push(int);
 	});
+	console.log(input)
 	$.ajax({
 		url: url,
 		type: 'POST',
